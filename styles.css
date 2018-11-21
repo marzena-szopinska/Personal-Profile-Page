@@ -28,11 +28,13 @@ a:hover {
 
 .main-nav {
   width: 100%;
-  background: black;
+  background: #111;
   min-height: 30px;
   padding: 10px;
   position: fixed;
   text-align: center;
+  /* keep the nav-bar always on top */
+  z-index: 1000;
 }
 .nav {
   display: -webkit-box;
@@ -217,7 +219,8 @@ a.social:hover {
 .title {
   background-color: #222;
   color: #f7f5f0;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  margin-top: 60px;
 }
 
 .card-project img {
