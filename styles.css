@@ -15,10 +15,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #999;
+  color: #000;
+  transition: color .5s;
 }
 a:hover {
-  color: #6633ff;
+  color: #999;
 }
 
 /* Section Styles */
@@ -50,6 +51,7 @@ a:hover {
 }
 .nav a {
   transition: all .5s;
+  color: #999;
 }
 .nav a:hover {
   color: white
@@ -57,7 +59,8 @@ a:hover {
 
 header {
   text-align: center;
-  background: url('images/warsaw.jpeg') no-repeat top center ;
+  /* add liniear gradient to darken the background */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('images/warsaw.jpeg') no-repeat top center ;
   background-size: cover;
   overflow: hidden;
   padding-top: 60px;
@@ -69,15 +72,16 @@ header .profile-image {
   margin-top: 50px;
   width: 150px;
   height: 150px;
+  background-color: #f7f5f0;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 6px double #f7f5f0;
   transition: all .5s;
 }
 header .profile-image:hover {
   transform: scale(1.2) rotate(5deg);
 }
 .tag {
-  background-color: #efefef;
+  background-color: #f7f5f0;
   color: black;
   padding: 10px;
   border-radius: 5px;
@@ -85,8 +89,9 @@ header .profile-image:hover {
   margin: 10px auto;
 }
 .location {
-  background-color: #222;
-  color: yellow;
+  font-weight: bold;
+  background-color: #f7f5f0;
+  color: #222;
 }
 .card {
   margin: 30px;
@@ -94,12 +99,12 @@ header .profile-image:hover {
   max-width: 500px;
   text-align: left;
   background: #fff;
-  border-bottom: 4px solid #ccc;
   border-radius: 6px;
+  box-shadow: inset 0 0 15px #222;
   transition: all .5s;
 }
 .card:hover {
-  border-color: #ff99ff;
+  background-color: #e5e3e3;
 }
 
 ul.skills {
@@ -110,14 +115,14 @@ ul.skills {
 .skills li {
   border-radius: 6px;
   display: inline-block;
-  background: #ff9904;
+  background: #146eb0;
   color: white;
   padding: 5px 10px;
   margin: 2px;
 }
 
 .skills li:nth-child(odd) {
-  background: #0399ff;
+  background: #dd4b25;
 }
 
 footer {
@@ -151,6 +156,7 @@ a.social {
   opacity: .4;
   transition: all .5s;
 }
+
 a.twitter {
   background-image: url(images/twitter.svg);
 }
@@ -165,6 +171,93 @@ a.social:hover {
 }
 .clearfix {
   clear: both;
+}
+
+/* PROJECTS */
+.projects-header {
+  /* resign ffom the background */
+  background: none;
+  min-height: 140px;
+  /* center the header */
+  width: 70%;
+  margin: 0 auto;
+}
+
+.read-more {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 30px;
+  transition: all .5s;
+}
+
+.title {
+  background-color: #222;
+  color: #f7f5f0;
+  margin-bottom: 30px;
+}
+
+.card-project img {
+  width: 100%;
+  /* make a picture black and white */
+  filter: grayscale(100%);
+}
+
+.card-project:hover > img {
+  /* make a picture colorful again */
+  filter: grayscale(0%);
+}
+
+.card-project:hover > a .read-more {
+  transform: scale(1.05);
+}
+
+.flex {
+  /* allow for max two projects horizontly */
+  flex-wrap: wrap;
+}
+
+/* pusling text animation */
+.pulsate {
+    -webkit-animation: pulsate 3s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.5;
+}
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.go-back {
+  /* make some space between the button and the projects */
+  margin-top: 50px;
+  display: inline-block;
+}
+
+/* CONTACTS */
+.contact-header {
+  /* make the background to cover the whole webpage */
+  height: 100vh;
+
+}
+
+.contact-header h1 {
+  margin-bottom: 60px;
+  margin-top: 80px;
+}
+
+.contact-header .go-back {
+  color: #fff;
+}
+
+span {
+  font-weight: bold;
 }
 
 /* Styles for larger screens */
